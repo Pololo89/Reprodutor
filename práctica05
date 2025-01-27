@@ -1,1 +1,78 @@
-k
+"""
+Asigancion
+"""
+
+# valor
+
+x = 10
+y = 20
+print (x, y)
+print(x + y)
+
+# referencia 
+
+a = [10, 20, 30]
+b = a
+b.append(40)
+print(a)
+print(b)
+
+# funciones por valor
+
+f = 10
+
+def valor(num : int):
+    num = 20
+    print(num)
+
+valor(f)
+print(f)
+
+# funciones por referencia 
+
+my_list_a = [10, 20, 30]
+
+def my_list(f : list):
+    f.append(40)
+    my_list_b = f
+    my_list_b.append(50)
+    print(my_list_b)
+    print(f) 
+    
+my_list(my_list_a)
+print(my_list_a)
+
+'''
+extra
+'''
+
+# valores
+
+a = 5
+b = 10
+
+def intercambiar_por_valor(val1, val2):
+    temp = val1
+    val1 = val2
+    val2 = temp
+    return val1, val2
+
+nuevo_a, nuevo_b = intercambiar_por_valor(a, b)
+
+print(f"Valores originales: a = {a}, b = {b}")
+print(f"Valores intercambiados: nuevo_a = {nuevo_a}, nuevo_b = {nuevo_b}")
+
+# referencia 
+
+# Parámetros iniciales
+
+valores = [5, 10]
+
+def intercambiar_por_referencia(lista):
+    lista[0], lista[1] = lista[1], lista[0]
+    return lista
+
+nuevos_valores = intercambiar_por_referencia(valores.copy())
+
+print(f"Valores originales: {valores[0]}, {valores[1]}")
+print(f"Valores intercambiados: {nuevos_valores[0]}, {nuevos_valores[1]}")
